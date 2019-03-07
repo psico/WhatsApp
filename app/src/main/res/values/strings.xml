@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WhatsApp</string>
+    <string name="logo">Logo</string>
+    <string name="digite_o_seu_nome">Digite o seu nome</string>
+    <string name="botao_cadastrar">Cadastrar</string>
+    <string name="validar">Validar</string>
+    <string name="digite_o_c_digo">Digite o Código</string>
+    <string name="valida_o">Validação</string>
+    <string name="voc_recebeu_um_sms_para_valida_o_do_seu_n_mero_digite_o_c_digo_de_valida_o_abaixo">Você recebeu um SMS para validação do seu número, digite o código de validação abaixo:</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".activity.ValidadorActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/larguraLogo"
+        android:layout_height="@dimen/alturaLogo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp"
+        android:text="@string/valida_o"
+        android:textColor="@color/textColorPrimary" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="@string/voc_recebeu_um_sms_para_valida_o_do_seu_n_mero_digite_o_c_digo_de_valida_o_abaixo"
+        android:textColor="@color/textColorPrimary" />
+
+    <EditText
+        android:id="@+id/edit_cod_validacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/digite_o_c_digo"
+        android:inputType="number"
+        android:textColor="@color/textColorPrimary" />
+
+    <Button
+        android:id="@+id/bt_validar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="335dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/validar"
+        android:textColor="@color/textColorPrimary" />
+
+</RelativeLayout>
