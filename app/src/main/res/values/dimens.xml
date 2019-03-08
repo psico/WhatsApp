@@ -2,4 +2,5 @@
 <resources>
     <dimen name="larguraLogo">200dp</dimen>
     <dimen name="alturaLogo">163dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

@@ -12,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ValidadorActivity"></activity>
+        <activity
+            android:name=".activity.CadastrarUsuarioActivity"
+            android:label="@string/title_activity_cadastrar_usuario"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.desenvolvedorjg.whatsapp.activity.MainActivity" />
+        </activity>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
