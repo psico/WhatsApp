@@ -13,10 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.CadastrarUsuarioActivity"
+            android:name=".activity.CadastroUsuarioActivity"
             android:label="@string/title_activity_cadastrar_usuario"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.desenvolvedorjg.whatsapp.activity.MainActivity" />

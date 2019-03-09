@@ -47,8 +47,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="153dp"
-        android:layout_marginBottom="314dp"
-        android:text="Button"
+        android:layout_marginBottom="261dp"
+        android:text="@string/bt_loggar"
         tools:text="@string/bt_loggar" />
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_marginStart="108dp"
         android:layout_marginBottom="227dp"
         android:onClick="abrirCadastroUsuario"
-        android:text="TextView"
+        android:text="@string/texto_cadastrase"
         android:textColor="@android:color/white"
         tools:text="@string/texto_cadastrase" />
 
