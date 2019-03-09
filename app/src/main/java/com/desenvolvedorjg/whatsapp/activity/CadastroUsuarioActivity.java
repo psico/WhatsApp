@@ -62,8 +62,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if( task.isSuccessful() ){
                     Toast.makeText(CadastroUsuarioActivity.this, "Sucesso ao cadastrar usuário", Toast.LENGTH_LONG ).show();
+
+                    usuario.setId( task.getResult().getUser().getUid() );
+                    usuario.salvar();
                 }else {
-                    Toast.makeText(CadastroUsuarioActivity.this, "Erro ao cadastrar usuário: ", Toast.LENGTH_LONG ).show();
+                    Toast.makeText(CadastroUsuarioActivity.this, "Erro ao cadastrar usuário: " + task.getException(), Toast.LENGTH_LONG ).show();
                 }
             }
         });
