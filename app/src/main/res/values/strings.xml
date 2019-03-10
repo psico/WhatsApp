@@ -10,4 +10,5 @@
     <string name="bt_loggar">Loggar</string>
     <string name="texto_cadastrase">Não tem conta? Cadastra-se</string>
     <string name="title_activity_cadastrar_usuario">CadastrarUsuarioActivity</string>
+    <string name="bt_sair">Sair</string>
 </resources>

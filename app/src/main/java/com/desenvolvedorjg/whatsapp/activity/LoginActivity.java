@@ -33,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        verificarUsuarioLogado();
+
         email = (EditText) findViewById(R.id.edit_login_email);
         senha = (EditText) findViewById(R.id.edit_login_senha);
         botaoLogar = (Button) findViewById(R.id.bt_logar);
@@ -46,6 +48,14 @@ public class LoginActivity extends AppCompatActivity {
                 validarLogin();
             }
         });
+    }
+
+    private void verificarUsuarioLogado() {
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+
+        if (autenticacao.getCurrentUser() != null) {
+            abrirTelaPrincipal();
+        }
     }
 
     private void validarLogin() {
