@@ -41,6 +41,7 @@
         android:inputType="textPassword" />
 
     <Button
+        android:theme="@style/botaoPadrao"
         android:id="@+id/bt_logar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,58 +64,6 @@
         android:text="@string/texto_cadastrase"
         android:textColor="@android:color/white"
         tools:text="@string/texto_cadastrase" />
-
-    <!--<EditText-->
-    <!--android:id="@+id/edit_nome"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="215dp"-->
-    <!--android:autofillHints=""-->
-    <!--android:ems="90"-->
-    <!--android:hint="@string/digite_o_seu_nome"-->
-    <!--android:inputType="textPersonName"-->
-    <!--android:textColor="@color/textColorPrimary" />-->
-
-    <!--<EditText-->
-    <!--android:id="@+id/edit_cod_pais"-->
-    <!--android:layout_width="50dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="275dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="+55"-->
-    <!--android:inputType="number"-->
-    <!--android:textColor="@color/textColorPrimary" />-->
-
-    <!--<EditText-->
-    <!--android:id="@+id/edit_cod_area"-->
-    <!--android:layout_width="50dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginStart="65dp"-->
-    <!--android:layout_marginTop="275dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="11"-->
-    <!--android:inputType="number"-->
-    <!--android:textColor="@color/textColorPrimary" />-->
-
-    <!--<EditText-->
-    <!--android:id="@+id/edit_telefone"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginStart="135dp"-->
-    <!--android:layout_marginTop="275dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="987654321"-->
-    <!--android:inputType="number"-->
-    <!--android:textColor="@color/textColorPrimary" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/bt_cadastrar"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="335dp"-->
-    <!--android:background="@color/colorPrimaryDark"-->
-    <!--android:text="@string/botao_cadastrar"-->
-    <!--android:textColor="@color/textColorPrimary" />-->
 
 
 </RelativeLayout>
