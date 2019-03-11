@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">WhatsApp</string>
+
+    <string name="item_configuracao">Configurações</string>
+    <string name="item_sair">Sair</string>
     <string name="logo">Logo</string>
     <string name="digite_o_seu_nome">Digite o seu nome</string>
     <string name="botao_cadastrar">Cadastrar</string>
