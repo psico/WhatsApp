@@ -14,4 +14,7 @@
     <string name="texto_cadastrase">Não tem conta? Cadastra-se</string>
     <string name="title_activity_cadastrar_usuario">CadastrarUsuarioActivity</string>
     <string name="bt_sair">Sair</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
