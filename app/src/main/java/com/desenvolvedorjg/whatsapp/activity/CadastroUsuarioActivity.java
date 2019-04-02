@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.desenvolvedorjg.whatsapp.R;
 import com.desenvolvedorjg.whatsapp.config.ConfiguracaoFirebase;
 import com.desenvolvedorjg.whatsapp.helper.Base64Custom;
+import com.desenvolvedorjg.whatsapp.helper.Preferencias;
 import com.desenvolvedorjg.whatsapp.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -69,8 +70,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     usuario.setId( identificadorUsuario );
                     usuario.salvar();
 
-                    //autenticacao.signOut();
-                    //finish();
+                    Preferencias preferencias = new Preferencias(CadastroUsuarioActivity.this);
+                    preferencias.salvarDados(identificadorUsuario);
 
                     abrirLoginUsuario();
 
