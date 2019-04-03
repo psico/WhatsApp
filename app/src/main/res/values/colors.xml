@@ -6,4 +6,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="colorAccente">#3d958a</color>
+
+    <color name="cinza">#CCCCCC</color>
 </resources>
