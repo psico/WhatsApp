@@ -4,12 +4,14 @@ package com.desenvolvedorjg.whatsapp.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.desenvolvedorjg.whatsapp.Adapter.ContatoAdapter;
 import com.desenvolvedorjg.whatsapp.R;
 import com.desenvolvedorjg.whatsapp.config.ConfiguracaoFirebase;
 import com.desenvolvedorjg.whatsapp.helper.Preferencias;
@@ -28,13 +30,27 @@ public class ContatosFragment extends Fragment {
 
     private ListView listView;
     private ArrayAdapter adapter;
-    private ArrayList<String> contatos;
+    private ArrayList<Contato> contatos;
     private DatabaseReference firebase;
+    private ValueEventListener valueEventListenerContatos;
 
     public ContatosFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        firebase.addValueEventListener(valueEventListenerContatos);
+        Log.i("ValueEventListener", "onStart");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        firebase.removeEventListener(valueEventListenerContatos);
+        Log.i("ValueEventListener", "onStop");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +64,8 @@ public class ContatosFragment extends Fragment {
 
         //Monta listview e adapter
         listView = (ListView) view.findViewById(R.id.lv_contatos);
-        adapter = new ArrayAdapter(getActivity(), R.layout.lista_contato, contatos);
+//        adapter = new ArrayAdapter(getActivity(), R.layout.lista_contato, contatos);
+        adapter = new ContatoAdapter(getActivity(),contatos);
         listView.setAdapter(adapter);
 
         //Recuperar contatos do firebase
@@ -59,7 +76,7 @@ public class ContatosFragment extends Fragment {
                                         .child("contatos")
                                         .child( identificadorUsuarioLogado );
 
-        firebase.addValueEventListener(new ValueEventListener() {
+        valueEventListenerContatos = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -69,7 +86,7 @@ public class ContatosFragment extends Fragment {
                 //Listar Contatos
                 for (DataSnapshot dados: dataSnapshot.getChildren() ) {
                     Contato contato = dados.getValue(Contato.class);
-                    contatos.add(contato.getNome());
+                    contatos.add(contato);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -79,7 +96,7 @@ public class ContatosFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        };
 
         return view;
     }
