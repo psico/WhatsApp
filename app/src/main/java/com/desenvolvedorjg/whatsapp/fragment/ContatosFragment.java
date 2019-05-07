@@ -1,6 +1,7 @@
 package com.desenvolvedorjg.whatsapp.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -8,11 +9,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.desenvolvedorjg.whatsapp.Adapter.ContatoAdapter;
 import com.desenvolvedorjg.whatsapp.R;
+import com.desenvolvedorjg.whatsapp.activity.ConversaActivity;
 import com.desenvolvedorjg.whatsapp.config.ConfiguracaoFirebase;
 import com.desenvolvedorjg.whatsapp.helper.Preferencias;
 import com.desenvolvedorjg.whatsapp.model.Contato;
@@ -53,7 +56,7 @@ public class ContatosFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
         //Instanciar objetos
@@ -97,6 +100,23 @@ public class ContatosFragment extends Fragment {
 
             }
         };
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(getActivity(), ConversaActivity.class);
+
+                //recuperar dados a serem passados
+                Contato contato = contatos.get(position);
+
+                // enviando dados para conversa activity
+                intent.putExtra("nome", contato.getNome());
+                intent.putExtra("email", contato.getEmail());
+
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
