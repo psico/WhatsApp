@@ -22,10 +22,10 @@ public class TabAdapter extends FragmentStatePagerAdapter {
 
         switch (i) {
             case 0:
-                fragment = new ContatosFragment();
+                fragment = new ConversasFragment();
                 break;
             case 1:
-                fragment = new ConversasFragment();
+                fragment = new ContatosFragment();
                 break;
         }
 
