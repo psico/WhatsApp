@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.desenvolvedorjg.whatsapp.Adapter.MensagemAdapter;
 import com.desenvolvedorjg.whatsapp.R;
 import com.desenvolvedorjg.whatsapp.config.ConfiguracaoFirebase;
 import com.desenvolvedorjg.whatsapp.helper.Base64Custom;
@@ -30,8 +31,8 @@ public class ConversaActivity extends AppCompatActivity {
     private ImageButton btMensagem;
     private DatabaseReference firebase;
     private ListView listView;
-    private ArrayList<String> mensagens;
-    private ArrayAdapter adapter;
+    private ArrayList<Mensagem> mensagens;
+    private ArrayAdapter<Mensagem> adapter;
     private ValueEventListener valueEventListenerMensagem;
 
     //Dados do destinatario
@@ -72,11 +73,8 @@ public class ConversaActivity extends AppCompatActivity {
 
         //Monta listview e adapter
         mensagens = new ArrayList<>();
-        adapter = new ArrayAdapter(
-                ConversaActivity.this,
-                android.R.layout.simple_list_item_1,
-                mensagens
-        );
+        adapter = new MensagemAdapter(ConversaActivity.this, mensagens);
+
         listView.setAdapter(adapter);
 
         //Recupera mensagens do Firebase
@@ -95,7 +93,7 @@ public class ConversaActivity extends AppCompatActivity {
                 //Recupera mensagens
                 for (DataSnapshot dados: dataSnapshot.getChildren()) {
                     Mensagem mensagem = dados.getValue(Mensagem.class);
-                    mensagens.add( mensagem.getMensagem() );
+                    mensagens.add( mensagem );
 
                 }
             }
@@ -122,7 +120,11 @@ public class ConversaActivity extends AppCompatActivity {
                     mensagem.setIdUsuario(idUsuarioRemetente);
                     mensagem.setMensagem(textoMensagem);
 
+                    //salvamos mensagem para o remetente
                     salvarMensagem(idUsuarioRemetente, idUsuarioDestinatario, mensagem );
+
+                    //salvamos mensagem para o destinatario
+                    salvarMensagem(idUsuarioDestinatario, idUsuarioRemetente, mensagem);
 
                     editMensagem.setText("");
                 }
